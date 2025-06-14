@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Ana Sayfa{% endblock %}
+
+{% block content %}
+    <h1>Motosiklet İlanları</h1>
+    <div class="sections-container">
+        <div class="brands-section">
+            <h2>Markalar</h2>
+            <ul>
+                {% for marka in markalar %}
+                    <li><a href="{{ url_for('marka_detay', marka_adi=marka) }}">{{ marka }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="ads-grid">
+            <div class="ad-placeholder">FOTOĞRAF 1</div>
+            <div class="ad-placeholder">FOTOĞRAF 2</div>
+            <div class="ad-placeholder">FOTOĞRAF 3</div>
+            <div class="ad-placeholder">FOTOĞRAF 4</div>
+            <div class="ad-placeholder">FOTOĞRAF 5</div>
+            <div class="ad-placeholder">FOTOĞRAF 6</div>
+            <div class="ad-placeholder">FOTOĞRAF 7</div>
+            <div class="ad-placeholder">FOTOĞRAF 8</div>
+        </div>
+    </div>
+{% endblock %}
