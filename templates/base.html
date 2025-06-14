@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motorum.com - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">Motorum.com</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('karsilastirma') }}">Karşılaştırma</a></li>
+                    <li>
+                        <form action="{{ url_for('arama') }}" method="GET" class="search-form">
+                            <input type="text" name="q" placeholder="Arama..." class="search-input">
+                            <button type="submit" class="search-button">Ara</button>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Motorum.com. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+</body>
+</html>
